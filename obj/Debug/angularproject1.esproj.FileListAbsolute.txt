@@ -1,0 +1,2 @@
+C:\Users\marce\Documents\School Work\2022\ObjectDesign\Projects\angularproject1\obj\Debug\angularproject1.esproj.SuggestedBindingRedirects.cache
+C:\Users\marce\Documents\School Work\2022\ObjectDesign\Projects\angularproject1\obj\Debug\angularproject1.esproj.CoreCompileInputs.cache
