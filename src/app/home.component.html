@@ -1,0 +1,21 @@
+
+<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
+  <h1 style="font-weight:normal">Left Sidebar</h1>
+  <nav>
+    <a routerLink="/events">Events</a>
+  </nav>
+  <nav>
+    <a routerLink="/profile">Profile</a>
+  </nav>
+  <nav>
+    <a routerLink="/usermanagement">UserManagement</a>
+  </nav>
+  <nav>
+    <a routerLink="/help">SiteHelp</a>
+  </nav>
+</p-sidebar>
+
+<p-button type="button" (click)="visibleSidebar1 = true" (mouseover)="visibleSidebar1 = true" icon="pi pi-arrow-right"></p-button>
+
+
+  <router-outlet></router-outlet>
