@@ -10,9 +10,4 @@
     <!-- Folder where production build objects will be placed -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\angularproject1</BuildOutputFolder>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="src\events\home\" />
-    <Folder Include="src\profile\home\" />
-    <Folder Include="src\user-management\home\" />
-  </ItemGroup>
 </Project>
