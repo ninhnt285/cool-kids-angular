@@ -12,6 +12,9 @@ import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsermanagementComponent } from './usermanagement/usermanagement.component';
 import { SiteHelpComponent } from './sitehelp/sitehelp.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextModule } from 'primeng/inputtext';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { SiteHelpComponent } from './sitehelp/sitehelp.component';
     AppRoutingModule,
     SidebarModule,
     FormsModule,
+    InputTextareaModule,
+    InputTextModule,
+    DynamicDialogModule
   ],
   providers: [],
   bootstrap: [HomeComponent]

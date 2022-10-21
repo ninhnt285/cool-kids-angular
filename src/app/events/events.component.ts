@@ -14,6 +14,10 @@ export class EventsComponent implements OnInit {
 
   eventArray: Event[] = [];
 
+  value = '';
+
+  
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,8 +26,12 @@ export class EventsComponent implements OnInit {
     this.eventOne.eventDescription = "Come to the party";
   }
 
+
+
   test() {
     console.log(this.eventOne);
   };
+
+  
 
 }
