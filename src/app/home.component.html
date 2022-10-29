@@ -1,21 +1,44 @@
+<p-toolbar>
+  <div class="p-toolbar-group-left">
+    <div class="col-sm-3"><img class="images" src="../assets/images/ckc_logo_tree_tagline_Connect.png" width="250" height="200" /></div>
+  </div>
 
-<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
-  <h1 style="font-weight:normal">Left Sidebar</h1>
+  <div class="p-toolbar-group-right">
+    <div class="p-mr-2">
+      <b>LOGGED IN: testUser@test.com</b>
+    </div>
+    <button pButton pRipple type="button" label="Log Out" pTooltip="Log Out" tooltipPosition="bottom"></button>
+  </div>
+</p-toolbar>
+
+<p-sidebar [(visible)]="visibleSidebar1" (mouseleave)="visibleSidebar1 = false" [baseZIndex]="10000">
+  <h1 style="font-weight:normal">Navigation</h1>
+  <p-divider></p-divider>
+  <nav>
+    <a routerLink="/homepage">Home</a>
+  </nav>
+  <p-divider></p-divider>
   <nav>
     <a routerLink="/events">Events</a>
   </nav>
+  <p-divider></p-divider>
   <nav>
     <a routerLink="/profile">Profile</a>
   </nav>
+  <p-divider></p-divider>
   <nav>
     <a routerLink="/usermanagement">UserManagement</a>
   </nav>
+  <p-divider></p-divider>
   <nav>
     <a routerLink="/help">SiteHelp</a>
   </nav>
+  <p-divider></p-divider>
+  <p-menu [model]="items"></p-menu>
 </p-sidebar>
-
-<p-button type="button" (click)="visibleSidebar1 = true" (mouseover)="visibleSidebar1 = true" icon="pi pi-arrow-right"></p-button>
-
-
+<div class="col-sm-3">
+  <p-button type="button" (click)="visibleSidebar1 = true" (mouseover)="visibleSidebar1 = true" icon="pi pi-bars"></p-button>
+</div>
+<div id="box">
   <router-outlet></router-outlet>
+</div>
