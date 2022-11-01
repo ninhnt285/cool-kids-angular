@@ -10,8 +10,15 @@
   <h2>Event Name</h2>
   <input type="text" pInputText [(ngModel)]="eventOne.eventName" />
 
+  <h2> Event Type </h2>
+  <p-dropdown [options]="eventType" [(ngModel)]="selectedType" optionLabel="name" placeholder="Select a Event Type"></p-dropdown>
+
   <h2> Event Description</h2>
-  <textarea pInputTextarea [(ngModel)]="property"></textarea>
+  <textarea pInputTextarea [(ngModel)]="eventOne.eventDescription"></textarea>
+
+    
+  <p-button label="Create" icon="pi pi-upload" class="mr-2" (click)="selectEvent(eventOne)"></p-button>
+
 
 
 </body>

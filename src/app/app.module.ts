@@ -9,12 +9,18 @@ import { SidebarModule } from 'primeng/sidebar';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { EventsComponent } from './events/events.component';
+import { EventPopUp } from './events/Event Popup/eventpopup.component'
 import { ProfileComponent } from './profile/profile.component';
 import { UsermanagementComponent } from './usermanagement/usermanagement.component';
 import { SiteHelpComponent } from './sitehelp/sitehelp.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DropdownModule } from 'primeng/dropdown';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +28,8 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
     EventsComponent,
     ProfileComponent,
     UsermanagementComponent,
-    SiteHelpComponent
+    SiteHelpComponent,
+    EventPopUp
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,11 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
     FormsModule,
     InputTextareaModule,
     InputTextModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    DropdownModule,
+    
+    
+
   ],
   providers: [],
   bootstrap: [HomeComponent]
