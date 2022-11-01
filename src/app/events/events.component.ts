@@ -1,20 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from 'src/app/shared/models/event.model'
+import { Event } from 'src/app/shared/models/event.model';
+import { DialogService } from 'primeng/dynamicdialog';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { CreateEventComponent } from '../events/create-event/create-event.component';
 
 
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
-  styleUrls: ['./events.component.css',]
+  styleUrls: ['./events.component.css'],
+  providers: [DialogService]  
 })
 export class EventsComponent implements OnInit {
   eventOne = new Event;
   eventTwo = new Event;
   eventThree = new Event;
   eventFour = new Event;
+  ref!: DynamicDialogRef;
 
   eventsArray: Event[] = [];
-  constructor() { }
+  constructor(public dialogService: DialogService) { }
 
   ngOnInit(): void {
     this.generateEvents()
@@ -22,28 +27,32 @@ export class EventsComponent implements OnInit {
 
   generateEvents() {
     this.eventOne.name = 'Halloween Bingo';
-    this.eventOne.date = new Date();
+    this.eventOne.date = new Date("October 30, 2022");
+    this.eventOne.time = new Date();
+    this.eventOne.time.setHours(13, 0, 0);
     this.eventOne.type = 'Halloween Bingo';
     this.eventOne.description = 'Halloween Bingo starting at 1pm. Come show us your Halloween costume and play some Bingo.'
     this.eventsArray.push(this.eventOne);
 
     this.eventTwo.name = "Holiday Poinsettia Sale";
-    this.eventTwo.date = new Date();
+    this.eventTwo.date = new Date("October 31, 2022")
     this.eventTwo.type = "Fundraiser";
     this.eventTwo.description = "Give the gift of the Christmas flower and support the coolest kids fighting cancer during our fundraiser!";
     this.eventsArray.push(this.eventTwo);
 
-    this.eventThree.name = "Charity Poker";
-    this.eventThree.date = new Date();
-    this.eventThree.type = "Poker";
-    this.eventThree.description = "Charity poker tournament in honor of Ken Singleton. Half game starts at 5pm. Tournament to start at 7pm.";
-    this.eventsArray.push(this.eventThree);
+  }
 
-    this.eventFour.name = "Santa Breakfast";
-    this.eventFour.date = new Date();
-    this.eventFour.type = "Santa";
-    this.eventFour.description = "Please join Cool Kids Campaign for our 1st Annual Breakfast with Santa Fundraiser!";
-    this.eventsArray.push(this.eventFour);
+  show() {
+      this.ref = this.dialogService.open(CreateEventComponent, {
+      header: 'Event Creator',
+      width: '22%',
+      height: '48%'
+    });
+    this.ref.onClose.subscribe((event: Event) => {
+      if (event) {
+        this.eventsArray.push(event);
+      }
+    })
   }
 
 }

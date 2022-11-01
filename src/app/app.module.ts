@@ -23,6 +23,8 @@ import { UsermanagementComponent } from './usermanagement/usermanagement.compone
 import { SiteHelpComponent } from './sitehelp/sitehelp.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { EventDisplayComponent } from './events/event-display/event-display.component';
+import { CreateEventComponent } from './events/create-event/create-event.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { EventDisplayComponent } from './events/event-display/event-display.comp
     SiteHelpComponent,
     HomepageComponent,
     EventDisplayComponent,
+    CreateEventComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { EventDisplayComponent } from './events/event-display/event-display.comp
     TooltipModule,
     DividerModule,
     MenuModule,
-    CardModule
+    CardModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
