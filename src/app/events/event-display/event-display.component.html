@@ -1,0 +1,31 @@
+<p-card header="{{event.name}}" [style]="{width: '360px'}">
+  <ng-template pTemplate="header">
+    <div *ngIf="event.type == 'Halloween Bingo'">
+      <img class="images" src="../assets/images/halloween-bingo_250px.png" />
+    </div>
+    <div *ngIf="event.type == 'Poker'">
+      <img class="images" src="../assets/images/ckc_poker.png" />
+    </div>
+    <div *ngIf="event.type == 'Fundraiser'">
+      <img class="images" src="../assets/images/ckc_fundraiser.png" />
+    </div>
+    <div *ngIf="event.type == 'Santa'">
+      <img class="images" src="../assets/images/ckc_santa.png" />
+    </div>
+  </ng-template>
+  <div class="p-d-flex p-flex-column">
+    <div class="p-mb-2">
+      <b>Date: {{event.date | date: 'shortDate'}}</b>
+    </div>
+    <div class="p-mb-2">
+      <b>Time: {{event.time | date: 'shortTime'}}</b>
+    </div>
+  </div>
+  <p>{{event.description}}</p>
+  <ng-template pTemplate="footer">
+    <p-divider></p-divider>
+    <p-button label="Sign Up" icon="pi pi-check"></p-button>
+    <p-button label="Edit" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+  </ng-template>
+</p-card>
+
