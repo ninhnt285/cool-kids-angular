@@ -18,7 +18,10 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
 import { DividerModule } from 'primeng/divider';
 import { MenuModule } from 'primeng/menu';
+import { MessageModule } from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
 import { HomepageComponent } from './homepage/homepage.component';
+import { MessagePopupComponent } from './message-popup/message-popup.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     UsermanagementComponent,
     SiteHelpComponent,
     HomepageComponent,
+    MessagePopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     ToolbarModule,
     TooltipModule,
     DividerModule,
-    MenuModule
+    MenuModule,
+    MessageModule,
+    MessagesModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
