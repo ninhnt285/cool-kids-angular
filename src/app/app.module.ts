@@ -14,6 +14,8 @@ import { TooltipModule } from 'primeng/tooltip';
 import { DividerModule } from 'primeng/divider';
 import { MenuModule } from 'primeng/menu';
 import { CardModule } from 'primeng/card';
+import { MessageModule } from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
 //COMPONENTS
 import { HomeComponent } from './home.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +23,7 @@ import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsermanagementComponent } from './usermanagement/usermanagement.component';
 import { SiteHelpComponent } from './sitehelp/sitehelp.component';
+import { MessagePopupComponent } from './message-popup/message-popup.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { EventDisplayComponent } from './events/event-display/event-display.component';
 import { CreateEventComponent } from './events/create-event/create-event.component';
@@ -34,6 +37,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     UsermanagementComponent,
     SiteHelpComponent,
     HomepageComponent,
+    MessagePopupComponent,
     EventDisplayComponent,
     CreateEventComponent,
   ],
@@ -50,6 +54,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     TooltipModule,
     DividerModule,
     MenuModule,
+    MessageModule,
+    MessagesModule,
     CardModule,
     InputTextareaModule
   ],
