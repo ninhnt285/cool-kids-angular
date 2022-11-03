@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 //PRIMENG
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
@@ -16,6 +17,7 @@ import { MenuModule } from 'primeng/menu';
 import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 //COMPONENTS
 import { HomeComponent } from './home.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +29,6 @@ import { MessagePopupComponent } from './message-popup/message-popup.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { EventDisplayComponent } from './events/event-display/event-display.component';
 import { CreateEventComponent } from './events/create-event/create-event.component';
-import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -43,12 +44,14 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
   ],
   imports: [
     BrowserModule,
-    ButtonModule,
     BrowserAnimationsModule,
-    CalendarModule,
-    AppRoutingModule,
-    SidebarModule,
     FormsModule,
+    HttpClientModule,
+
+    AppRoutingModule,
+    ButtonModule,
+    CalendarModule,
+    SidebarModule,
     DynamicDialogModule,
     ToolbarModule,
     TooltipModule,

@@ -4,33 +4,27 @@
     <p-button label="Clear" icon="pi pi-times" styleClass="p-button-warning mr-4" (click)="clear()"></p-button>
   </div>
 </p-toolbar>
+
 <div class="p-d-flex">
   <div class="p-mr-2">
     <div class="p-d-flex p-flex-column">
-      <div class="p-mb-2">
+      <div class="field p-mb-2">
         <h5>Event Name</h5>
-        <input type="text" pInputText [(ngModel)]="createdEvent.name">
+        <input class="p-inputtext" type="text" pInputText [(ngModel)]="createdEvent.name">
       </div>
+
       <div class="p-mb-2">
-
-        <h5>Date</h5>
-        <p-calendar inputId="basic" appendTo="body" [(ngModel)]="createdEvent.date"></p-calendar>
-
+        <h5>Date and Time</h5>
+        <p-calendar inputId="time" appendTo="body" [(ngModel)]="createdEvent.date" [showTime]="true" hourFormat="12" ></p-calendar>
       </div>
     </div>
   </div>
   <div class="p-mr-2">
-    <div class="p-d-flex p-flex-column">
-      <div class="p-mb-2">
+    <div class="p-d-flex p-flex-column"></div>
+      <div class="field p-mb-2">
         <h5>Type</h5>
-        <input type="text" pInputText [(ngModel)]="createdEvent.type">
-
+        <input class="p-inputtext" type="text" pInputText [(ngModel)]="createdEvent.type">
       </div>
-      <div class="p-mb-2">
-        <h5>Time</h5>
-        <p-calendar [(ngModel)]="createdEvent.time" [timeOnly]="true" hourFormat="12" inputId="timeonly"></p-calendar>
-      </div>
-    </div>
   </div>
 </div>
 <h5>Description</h5>

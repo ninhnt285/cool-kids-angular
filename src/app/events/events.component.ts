@@ -3,6 +3,7 @@ import { Event } from 'src/app/shared/models/event.model';
 import { DialogService } from 'primeng/dynamicdialog';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { CreateEventComponent } from '../events/create-event/create-event.component';
+import { EventService } from "../event.service";
 
 
 @Component({
@@ -19,10 +20,19 @@ export class EventsComponent implements OnInit {
   ref!: DynamicDialogRef;
 
   eventsArray: Event[] = [];
-  constructor(public dialogService: DialogService) { }
+
+  constructor(
+    public dialogService: DialogService,
+    private eventService: EventService
+  ) { }
 
   ngOnInit(): void {
-    this.generateEvents()
+    this.getEvents()
+  }
+
+  getEvents(): void {
+    this.eventService.getEvents()
+      .subscribe(events => this.eventsArray = events);
   }
 
   generateEvents() {
@@ -45,8 +55,8 @@ export class EventsComponent implements OnInit {
   show() {
       this.ref = this.dialogService.open(CreateEventComponent, {
       header: 'Event Creator',
-      width: '22%',
-      height: '48%'
+      width: '40%',
+      height: '60%'
     });
     this.ref.onClose.subscribe((event: Event) => {
       if (event) {
@@ -54,5 +64,4 @@ export class EventsComponent implements OnInit {
       }
     })
   }
-
 }

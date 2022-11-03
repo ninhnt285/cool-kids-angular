@@ -53,6 +53,15 @@
               ],
               "outputHashing": "all"
             },
+            "localhost": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -72,6 +81,9 @@
             },
             "development": {
               "browserTarget": "angularproject1:build:development"
+            },
+            "localhost": {
+              "browserTarget": "angularproject1:build:localhost"
             }
           },
           "defaultConfiguration": "development"
