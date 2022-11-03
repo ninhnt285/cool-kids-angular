@@ -18,7 +18,7 @@
       <b>Date: {{event.date | date: 'shortDate'}}</b>
     </div>
     <div class="p-mb-2">
-      <b>Time: {{event.time | date: 'shortTime'}}</b>
+      <b>Time: {{event.date | date: 'shortTime'}}</b>
     </div>
   </div>
   <p>{{event.description}}</p>
@@ -28,4 +28,3 @@
     <p-button label="Edit" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
   </ng-template>
 </p-card>
-
