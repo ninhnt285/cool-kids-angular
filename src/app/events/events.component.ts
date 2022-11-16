@@ -4,14 +4,16 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { CreateEventComponent } from '../events/create-event/create-event.component';
 
+import { EventsService } from './events.service';
 
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css'],
-  providers: [DialogService]  
+  providers: [DialogService, EventsService]
 })
 export class EventsComponent implements OnInit {
+  events: Event[] = [];
   eventOne = new Event;
   eventTwo = new Event;
   eventThree = new Event;
@@ -19,10 +21,13 @@ export class EventsComponent implements OnInit {
   ref!: DynamicDialogRef;
 
   eventsArray: Event[] = [];
-  constructor(public dialogService: DialogService) { }
+  constructor(public dialogService: DialogService,
+              private eventsService: EventsService) { }
+
 
   ngOnInit(): void {
     this.generateEvents()
+    this.getEvents()
   }
 
   generateEvents() {
@@ -42,6 +47,20 @@ export class EventsComponent implements OnInit {
 
   }
 
+  getEvents() : void {
+    this.eventsService.getEvents()
+      .subscribe(data => {
+          this.events = data.data;
+          console.log(this.events);
+          this.events.forEach((event) => {
+            event.time = event.start_time
+            event.name = event.title
+            event.date = event.start_time
+            event.type = "Halloween Bingo"
+          });
+        }, error => console.log('failure', error));
+  }
+
   show() {
       this.ref = this.dialogService.open(CreateEventComponent, {
       header: 'Event Creator',
@@ -50,7 +69,17 @@ export class EventsComponent implements OnInit {
     });
     this.ref.onClose.subscribe((event: Event) => {
       if (event) {
-        this.eventsArray.push(event);
+        let body = new FormData()
+        body.append('name', 'test');
+        //body.append('type', event.type);
+        //body.append('date', event.date.toString());
+        //body.append('description', event.description);
+        //body.append('time', event.time.toString());
+        this.eventsService.addEvent(body)
+          .subscribe(data => {
+            console.log(data);
+          });
+        //this.eventsArray.push(event);
       }
     })
   }

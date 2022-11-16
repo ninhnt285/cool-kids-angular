@@ -28,6 +28,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { EventDisplayComponent } from './events/event-display/event-display.component';
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+//HTTPCLIENT
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     MessageModule,
     MessagesModule,
     CardModule,
-    InputTextareaModule
+    InputTextareaModule,
+    //import HttpClientModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
