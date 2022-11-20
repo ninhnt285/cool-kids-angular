@@ -18,7 +18,11 @@ import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { PasswordModule } from 'primeng/password';
 //COMPONENTS
+import { AppLayoutModule } from './layout/app.layout.module'
 import { HomeComponent } from './home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { EventsComponent } from './events/events.component';
@@ -29,6 +33,8 @@ import { MessagePopupComponent } from './message-popup/message-popup.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { EventDisplayComponent } from './events/event-display/event-display.component';
 import { CreateEventComponent } from './events/create-event/create-event.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -41,8 +47,12 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
     MessagePopupComponent,
     EventDisplayComponent,
     CreateEventComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
+    AppLayoutModule,
+
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -60,7 +70,10 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
     MessageModule,
     MessagesModule,
     CardModule,
-    InputTextareaModule
+    InputTextareaModule,
+    InputTextModule,
+    CheckboxModule,
+    PasswordModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
