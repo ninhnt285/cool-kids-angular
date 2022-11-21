@@ -35,6 +35,7 @@ import { EventDisplayComponent } from './events/event-display/event-display.comp
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { LogoutComponent } from './auth/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { RegisterComponent } from './auth/register/register.component';
     CreateEventComponent,
     LoginComponent,
     RegisterComponent,
+    LogoutComponent,
   ],
   imports: [
     AppLayoutModule,

@@ -10,6 +10,9 @@ export class MessageService {
 
   update(msg: Message) {
     this.messages = [msg];
+    setTimeout(() => {
+      this.clear();
+    }, 3000);
   }
 
   clear() {

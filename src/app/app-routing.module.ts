@@ -8,6 +8,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from "./auth/login/login.component";
 import { RegisterComponent } from "./auth/register/register.component";
 import { AppLayoutComponent } from "./layout/app.layout.component";
+import { LogoutComponent } from "./auth/logout/logout.component";
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
       // Auth
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'logout', component: LogoutComponent },
 
       { path: 'homepage', component: HomepageComponent },
       { path: 'events', component: EventsComponent },

@@ -1,4 +1,4 @@
-<p-card header="{{event.name}}" [style]="{width: '360px'}">
+<p-card header="{{event.name}}">
   <ng-template pTemplate="header">
     <div *ngIf="event.type == 'Halloween Bingo'">
       <img class="images" src="../assets/images/halloween-bingo_250px.png" />
@@ -21,10 +21,11 @@
       <b>Time: {{event.date | date: 'shortTime'}}</b>
     </div>
   </div>
-  <p>{{event.description}}</p>
+  <p [style]="{minHeight: '100px'}">{{event.description}}</p>
   <ng-template pTemplate="footer">
     <p-divider></p-divider>
     <p-button label="Sign Up" icon="pi pi-check"></p-button>
-    <p-button label="Edit" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+    <p-button icon="pi pi-pencil" styleClass="p-button-secondary ml-2"></p-button>
+    <p-button icon="pi pi-trash" styleClass="p-button-danger ml-2" (onClick)="onDeleteEvent(event.id)"></p-button>
   </ng-template>
 </p-card>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from "../message.service";
+import { MessageService } from "../shared/services/message.service";
 
 @Component({
   selector: 'app-profile',
@@ -15,9 +15,6 @@ export class ProfileComponent implements OnInit {
 
   onSubmit(): void {
     this.messageService.update({severity:'success', summary:'Success', detail:'Profile Updated Successfully!'})
-    setTimeout(() => {
-      this.messageService.clear();
-    }, 3000);
   }
 
 }
