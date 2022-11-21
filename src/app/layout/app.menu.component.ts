@@ -57,7 +57,7 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'External Links',
                 items: [
-                    { label: 'Cool Kids Website', icon: 'pi pi-fw pi-home', url: ['https://github.com/primefaces/sakai-ng'], target: '_blank' },
+                    { label: 'Cool Kids Website', icon: 'pi pi-fw pi-home', url: ['https://coolkidscampaign.org'], target: '_blank' },
                     { label: 'Donate to Cool Kids Campaign', icon: 'pi pi-fw pi-money-bill', url: ['https://coolkidscampaign.org/donate-now/'], target: '_blank' }
                 ]
             }
