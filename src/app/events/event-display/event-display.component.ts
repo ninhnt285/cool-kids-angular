@@ -23,7 +23,7 @@ export class EventDisplayComponent implements OnInit {
   ngOnInit(): void {
     this.subscription = this.authService.user$.subscribe(user => {
       this.user = user;
-      if (this.user) {
+      if (this.user != null) {
         this.is_attending = this.event.users?.find(user => user.id == this.user.id) !== undefined;
       }
     })

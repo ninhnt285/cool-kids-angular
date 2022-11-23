@@ -22,6 +22,13 @@ export class EventService {
     private authService: AuthService,
   ) { }
 
+  getEvent(id) {
+    return this.apiService.get("events/" + id)
+      .pipe(map(res => {
+        return res.data;
+      }))
+  }
+
   getEvents() {
     this.apiService.get("events")
       .subscribe(res => {

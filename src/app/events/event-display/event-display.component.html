@@ -1,19 +1,24 @@
-<p-card header="{{event.name}}">
+<p-card>
   <ng-template pTemplate="header">
-    <div *ngIf="event.type == 'Halloween Bingo'">
-      <img class="images" src="../assets/images/halloween-bingo_250px.png" />
-    </div>
-    <div *ngIf="event.type == 'Poker'">
-      <img class="images" src="../assets/images/ckc_poker.png" />
-    </div>
-    <div *ngIf="event.type == 'Fundraiser'">
-      <img class="images" src="../assets/images/ckc_fundraiser.png" />
-    </div>
-    <div *ngIf="event.type == 'Santa'">
-      <img class="images" src="../assets/images/ckc_santa.png" />
-    </div>
+    <a [routerLink]="['/events', event.id]">
+      <div *ngIf="event.type == 'Halloween Bingo'">
+        <img class="images" src="../assets/images/halloween-bingo_250px.png" />
+      </div>
+      <div *ngIf="event.type == 'Poker'">
+        <img class="images" src="../assets/images/ckc_poker.png" />
+      </div>
+      <div *ngIf="event.type == 'Fundraiser'">
+        <img class="images" src="../assets/images/ckc_fundraiser.png" />
+      </div>
+      <div *ngIf="event.type == 'Santa'">
+        <img class="images" src="../assets/images/ckc_santa.png" />
+      </div>
+    </a>
   </ng-template>
   <div class="p-d-flex p-flex-column">
+    <a [routerLink]="['/events', event.id]">
+      <h4>{{ event.name }}</h4>
+    </a>
     <div class="p-mb-2">
       <b>Date: {{event.date | date: 'shortDate'}}</b>
     </div>

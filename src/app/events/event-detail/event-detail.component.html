@@ -1,0 +1,84 @@
+<p-card *ngIf="event" header="Event Detail: {{ event.name }}">
+  <div class="grid">
+    <div class="col-12 xl:col-4">
+      <div *ngIf="event.type == 'Halloween Bingo'">
+        <img class="images" src="../assets/images/halloween-bingo_250px.png" />
+      </div>
+      <div *ngIf="event.type == 'Poker'">
+        <img class="images" src="../assets/images/ckc_poker.png" />
+      </div>
+      <div *ngIf="event.type == 'Fundraiser'">
+        <img class="images" src="../assets/images/ckc_fundraiser.png" />
+      </div>
+      <div *ngIf="event.type == 'Santa'">
+        <img class="images" src="../assets/images/ckc_santa.png" />
+      </div>
+    </div>
+    
+    <div class="col-12 xl:col-8">
+      <div class="mb-2">
+        <b>Date: {{event.date | date: 'shortDate'}}</b>
+      </div>
+
+      <div class="mb-2">
+        <b>Time: {{event.date | date: 'shortTime'}}</b>
+      </div>
+    
+      <p>{{event.description}}</p>
+      
+      <p-divider></p-divider>
+      <p-button *ngIf="user && !is_attending" label="Attend" icon="pi pi-check" (onClick)="onAttendEvent(event.id)"></p-button>
+      <p-button *ngIf="user && is_attending" label="Un-attend" icon="pi pi-times"  (onClick)="onUnAttendEvent(event.id)"></p-button>
+      <!-- <p-button *ngIf="user && user.role < 3" icon="pi pi-pencil" styleClass="p-button-secondary ml-1"></p-button> -->
+      <p-button *ngIf="user && user.role < 3" icon="pi pi-trash" styleClass="p-button-danger ml-1" (onClick)="onDeleteEvent(event.id)"></p-button>
+    </div>
+  </div>
+</p-card>
+
+<div class="grid mt-5" *ngIf="event && event.users">
+  <div class="col-12">
+		<div class="card">
+			<h5>Attending Users</h5>
+			<p-table #dt1 [value]="event.users" dataKey="id" [rows]="100" [rowHover]="true" styleClass="p-datatable-gridlines" [globalFilterFields]="['name','email']" responsiveLayout="scroll">
+				<ng-template pTemplate="header">
+					<tr>
+						<th id="name" style="min-width: 12rem">
+							<div class="flex justify-content-between align-items-center">
+								<span>Name</span>
+							</div>
+						</th>
+						<th id="email" style="min-width: 12rem">
+							<div class="flex justify-content-between align-items-center">
+								<span>Email</span>
+							</div>
+						</th>
+						<th id="role" style="min-width: 14rem">
+							<div class="flex justify-content-between align-items-center">
+								<span>Role</span>
+							</div>
+						</th>
+					</tr>
+				</ng-template>
+
+				<ng-template pTemplate="body" let-user>
+					<tr>
+						<td>
+							{{user.name}}
+						</td>
+						<td>
+							{{user.email}}
+						</td>
+						<td>
+              <p [ngSwitch]="user.role">
+                <!-- the same view can be shown in more than one case -->
+                <span *ngSwitchCase="1">Administrator</span>
+                <span *ngSwitchCase="2">Staff</span>
+                <span *ngSwitchDefault="3">Registered User</span>
+              </p>
+						</td>
+					</tr>
+				</ng-template>
+      </p-table>
+		</div>
+	</div>
+</div>

@@ -40,6 +40,7 @@ import { LogoutComponent } from './auth/logout/logout.component';
 import { EditUserComponent } from './usermanagement/edit-user/edit-user.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
+import { EventDetailComponent } from './events/event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { EditProfileComponent } from './profile/edit-profile/edit-profile.compon
     LogoutComponent,
     EditUserComponent,
     EditProfileComponent,
+    EventDetailComponent,
   ],
   imports: [
     AppLayoutModule,

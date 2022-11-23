@@ -9,6 +9,7 @@ import { LoginComponent } from "./auth/login/login.component";
 import { RegisterComponent } from "./auth/register/register.component";
 import { AppLayoutComponent } from "./layout/app.layout.component";
 import { LogoutComponent } from "./auth/logout/logout.component";
+import { EventDetailComponent } from "./events/event-detail/event-detail.component";
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
 
       { path: 'homepage', component: HomepageComponent },
       { path: 'events', component: EventsComponent },
+      { path: 'events/:id', component: EventDetailComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'usermanagement', component: UsermanagementComponent },
       { path: 'help', component: SiteHelpComponent }
