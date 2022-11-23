@@ -44,8 +44,8 @@
                 <span *ngSwitchDefault="3">Registered User</span>
               </p>
 						</td>
-            <td *ngIf="authUser && authUser.role==1" id="action" style="min-width: 14rem">
-              <p-button icon="pi pi-pencil" styleClass="p-button-secondary ml-2"></p-button>
+            <td *ngIf="authUser && authUser.role==1 && user.id != 1" id="action" style="min-width: 14rem">
+              <p-button icon="pi pi-pencil" styleClass="p-button-secondary ml-2" (onClick)="showEdit(user)"></p-button>
             </td>
 					</tr>
 				</ng-template>

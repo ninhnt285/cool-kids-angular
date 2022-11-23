@@ -37,6 +37,8 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LogoutComponent } from './auth/logout/logout.component';
+import { EditUserComponent } from './usermanagement/edit-user/edit-user.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { LogoutComponent } from './auth/logout/logout.component';
     LoginComponent,
     RegisterComponent,
     LogoutComponent,
+    EditUserComponent,
   ],
   imports: [
     AppLayoutModule,
@@ -77,7 +80,8 @@ import { LogoutComponent } from './auth/logout/logout.component';
     InputTextModule,
     CheckboxModule,
     PasswordModule,
-    TableModule
+    TableModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
