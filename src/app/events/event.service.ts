@@ -43,6 +43,7 @@ export class EventService {
     this.apiService.put("events/" + event.id, event)
       .subscribe(res => {
         this.getEvents()
+        this.authService.getMe();
         this.messageService.update({severity:'success', summary:'Success', detail:'Updated Event Successfully!'})
       })
   }
@@ -51,6 +52,7 @@ export class EventService {
     this.apiService.delete("events/" + id)
       .subscribe(res => {
         this.getEvents()
+        this.authService.getMe();
         this.messageService.update({severity:'success', summary:'Success', detail:'Deleted Event Successfully!'})
       })
   }
