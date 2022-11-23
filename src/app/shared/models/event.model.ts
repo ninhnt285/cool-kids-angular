@@ -5,4 +5,5 @@ export interface Event {
   date?: Date | string;
   time?: Date;
   description?: string;
+  users?: any[]
 }

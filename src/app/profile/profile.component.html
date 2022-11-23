@@ -1,7 +1,28 @@
-<h5>Float Label</h5>
-<span class="p-float-label">
-  <input id="float-input" type="text" pInputText>
-  <label for="float-input">Username</label>
-  <button (click)="onSubmit()">Submit</button>
-</span>
-<!-- Daniel Polo-Wood testing pull -->
+<div *ngIf="user" class="grid">
+  <div class="col-12">
+    <p-card header="Profile">
+      <p><strong>Full Name:</strong> {{ user.name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p>
+        <strong>Role:</strong>
+        <span [ngSwitch]="user.role">
+          <!-- the same view can be shown in more than one case -->
+          <span *ngSwitchCase="1">Administrator</span>
+          <span *ngSwitchCase="2">Staff</span>
+          <span *ngSwitchDefault="3">Registered User</span>
+        </span>
+      </p>
+      <p-button icon="pi pi-pencil" styleClass="p-button-secondary ml-2" (onClick)="showEdit(user)"></p-button>
+    </p-card>
+  </div>
+
+  <div class="col-12">
+    <p-card header="Attending Events">
+      <div class="grid p-0 pt-3 align-items-stretch">
+        <div class="col-fixed col-12 xl:col-4 lg:col-6 sm:col-12 align-self-stretch" *ngFor="let event of user.events">
+          <event-display [event]="event"></event-display>
+        </div>
+      </div>
+    </p-card>
+  </div>
+</div>

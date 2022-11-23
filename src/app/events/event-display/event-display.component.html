@@ -24,8 +24,10 @@
   <p [style]="{minHeight: '100px'}">{{event.description}}</p>
   <ng-template pTemplate="footer">
     <p-divider></p-divider>
-    <p-button label="Sign Up" icon="pi pi-check"></p-button>
-    <p-button icon="pi pi-pencil" styleClass="p-button-secondary ml-2"></p-button>
-    <p-button icon="pi pi-trash" styleClass="p-button-danger ml-2" (onClick)="onDeleteEvent(event.id)"></p-button>
+    
+    <p-button *ngIf="!is_attending" label="Attend" icon="pi pi-check" (onClick)="onAttendEvent(event.id)"></p-button>
+    <p-button *ngIf="is_attending" label="Un-attend" icon="pi pi-times"  (onClick)="onUnAttendEvent(event.id)"></p-button>
+    <p-button *ngIf="user && user.role < 3" icon="pi pi-pencil" styleClass="p-button-secondary ml-1"></p-button>
+    <p-button *ngIf="user && user.role < 3" icon="pi pi-trash" styleClass="p-button-danger ml-1" (onClick)="onDeleteEvent(event.id)"></p-button>
   </ng-template>
 </p-card>

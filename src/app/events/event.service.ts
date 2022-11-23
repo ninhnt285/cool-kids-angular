@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Event } from "src/app/shared/models/event.model";
 import { MessageService } from "../shared/services/message.service";
 import { ApiService } from "../shared/services/api.service";
+import { AuthService } from "../auth/auth.service";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class EventService {
 
   constructor(
     private messageService: MessageService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private authService: AuthService,
   ) { }
 
   getEvents() {
@@ -51,5 +53,21 @@ export class EventService {
         this.getEvents()
         this.messageService.update({severity:'success', summary:'Success', detail:'Deleted Event Successfully!'})
       })
+  }
+
+  attendEvent(id) {
+    return this.apiService.post("attend-event/" + id, {})
+      .pipe(map(res => {
+        this.getEvents();
+        this.authService.getMe();
+      }));
+  }
+
+  unAttendEvent(id) {
+    return this.apiService.post("unattend-event/" + id, {})
+      .pipe(map(res => {
+        this.getEvents();
+        this.authService.getMe();
+      }));
   }
 }
