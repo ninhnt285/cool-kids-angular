@@ -44,6 +44,13 @@ export class AuthService {
       );
   }
 
+  updateMe(data) {
+    return this.apiService.put("users/me", data)
+      .pipe(map(res => {
+        this.getMe();
+      }));
+  }
+
   login(email: string, password: string): Observable<AuthUser> {
     return this.apiService.post("login", {email, password})
       .pipe(map(res => {
