@@ -15,6 +15,14 @@ export class MessageService {
     }, 3000);
   }
 
+  setSuccess(msg: string) {
+    this.update({severity:'success', summary:'Success', detail:msg})
+  }
+
+  setError(msg: string) {
+    this.update({severity:'error', summary:'Error', detail:msg})
+  }
+
   clear() {
     this.messages = [];
   }

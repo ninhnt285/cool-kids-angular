@@ -21,6 +21,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { PasswordModule } from 'primeng/password';
+import { TableModule } from 'primeng/table';
 //COMPONENTS
 import { AppLayoutModule } from './layout/app.layout.module'
 import { HomeComponent } from './home.component';
@@ -75,7 +76,8 @@ import { LogoutComponent } from './auth/logout/logout.component';
     InputTextareaModule,
     InputTextModule,
     CheckboxModule,
-    PasswordModule
+    PasswordModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
