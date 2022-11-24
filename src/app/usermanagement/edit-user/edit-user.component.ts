@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from "../users.service";
 import { DynamicDialogRef, DynamicDialogConfig } from "primeng/dynamicdialog";
+
+import { UsersService } from "../users.service";
 import { MessageService } from "../../shared/services/message.service";
 import { User } from "src/app/shared/models/user.model";
 
