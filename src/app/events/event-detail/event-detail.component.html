@@ -78,11 +78,13 @@
 						</td>
 					</tr>
 				</ng-template>
-				<tr>
-					<td colspan="3" style="text-align: center;">
-						<strong>Total: {{event.users.length}}</strong>
-					</td>
-				</tr>
+				<ng-template pTemplate="footer">
+					<tr>
+						<td colspan="3" style="text-align: center;">
+							<strong>Total: {{event.users.length}}</strong>
+						</td>
+					</tr>
+				</ng-template>
       </p-table>
 		</div>
 	</div>
