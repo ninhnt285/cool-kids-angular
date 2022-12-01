@@ -1,5 +1,126 @@
-<h5>Float Label</h5>
-<span class="p-float-label">
-  <input id="float-input" type="text" pInputText>
-  <label for="float-input">Client Name</label>
-</span>
+<div class="grid">
+  <div class="col-12">
+		<div class="card">
+			<h5>User Management</h5>
+			<p-table #dt1 [value]="users" dataKey="id" [rows]="100" [loading]="loading" [rowHover]="true" styleClass="p-datatable-gridlines" [globalFilterFields]="['name','email']" responsiveLayout="scroll">
+				<ng-template pTemplate="header">
+					<tr>
+						<th id="name" style="min-width: 12rem">
+							<div class="flex justify-content-between align-items-center">
+								<span>Name</span>
+							</div>
+						</th>
+						<th id="email" style="min-width: 12rem">
+							<div class="flex justify-content-between align-items-center">
+								<span>Email</span>
+							</div>
+						</th>
+						<th id="role" style="min-width: 14rem">
+							<div class="flex justify-content-between align-items-center">
+								<span>Role</span>
+							</div>
+						</th>
+            <th *ngIf="authUser && authUser.role==1" id="action" style="min-width: 14rem">
+							<div class="flex justify-content-between align-items-center">
+								<span>Action</span>
+							</div>
+						</th>
+					</tr>
+				</ng-template>
+
+				<ng-template pTemplate="body" let-user>
+					<tr>
+						<td>
+							{{user.name}}
+						</td>
+						<td>
+							{{user.email}}
+						</td>
+						<td>
+              <p [ngSwitch]="user.role">
+                <!-- the same view can be shown in more than one case -->
+                <span *ngSwitchCase="1">Administrator</span>
+                <span *ngSwitchCase="2">Staff</span>
+                <span *ngSwitchDefault="3">Registered User</span>
+              </p>
+						</td>
+            <td *ngIf="authUser && authUser.role==1 && user.id != 1" id="action" style="min-width: 14rem">
+              <p-button icon="pi pi-pencil" styleClass="p-button-secondary ml-2" (onClick)="showEdit(user)"></p-button>
+            </td>
+					</tr>
+				</ng-template>
+      </p-table>
+		</div>
+	</div>
+</div>
+
+<div id="pricing" class="py-4 px-4 lg:px-8 my-2 md:my-4">
+	<div class="text-center">
+			<h2 class="text-900 font-normal mb-2">Roles and Permissions</h2>
+	</div>
+
+ 	<div class="grid justify-content-between mt-8 md:mt-0">
+		<div class="col-12 lg:col-4 p-0 md:p-3">
+			<div class="surface-50 p-3 flex flex-column border-200 pricing-card cursor-pointer border-2 hover:border-primary transition-duration-300 transition-all" style="border-radius:10px">
+				<h3 class="text-900 text-center my-5">Administrator</h3>
+				<p-divider class="w-full bg-surface-200"></p-divider>
+				<ul class="my-5 list-none p-0 flex text-900 flex-column">
+					<li class="py-2">
+						<i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+						<span class="text-xl line-height-3">Attend Events</span>
+					</li>
+					<li class="py-2">
+						<i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+						<span class="text-xl line-height-3">Manage Events</span>
+					</li>
+					<li class="py-2">
+						<i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+						<span class="text-xl line-height-3">Manage Users</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+			
+			<div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
+				<div class="surface-50 p-3 flex flex-column border-200 pricing-card cursor-pointer border-2 hover:border-primary transition-duration-300 transition-all" style="border-radius:10px">
+							<h3 class="text-900 text-center my-5">Staff</h3>
+							<p-divider class="w-full bg-surface-200"></p-divider>
+							<ul class="my-5 list-none p-0 flex text-900 flex-column">
+								<li class="py-2">
+									<i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+									<span class="text-xl line-height-3">Attend Events</span>
+								</li>
+								<li class="py-2">
+									<i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+									<span class="text-xl line-height-3">Manage Events</span>
+								</li>
+								<li class="py-2">
+									<i class="pi pi-fw pi-times text-xl text-red-500 mr-2"></i>
+									<span class="text-xl line-height-3">Manage Users</span>
+								</li>
+							</ul>
+					</div>
+			</div>
+			
+			<div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
+					<div class="surface-50 p-3 flex flex-column border-200 pricing-card cursor-pointer border-2 hover:border-primary transition-duration-300 transition-all" style="border-radius:10px">
+						<h3 class="text-900 text-center my-5">Registered User</h3>
+						<p-divider class="w-full bg-surface-200"></p-divider>
+						<ul class="my-5 list-none p-0 flex text-900 flex-column">
+							<li class="py-2">
+								<i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+								<span class="text-xl line-height-3">Attend Events</span>
+							</li>
+							<li class="py-2">
+								<i class="pi pi-fw pi-times text-xl text-red-500 mr-2"></i>
+								<span class="text-xl line-height-3">Manage Events</span>
+							</li>
+							<li class="py-2">
+								<i class="pi pi-fw pi-times text-xl text-red-500 mr-2"></i>
+								<span class="text-xl line-height-3">Manage Users</span>
+							</li>
+						</ul>
+					</div>
+			</div>
+ </div> 
+</div>

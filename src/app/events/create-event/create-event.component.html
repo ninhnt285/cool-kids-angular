@@ -1,7 +1,7 @@
 <p-toolbar>
   <div class="p-toolbar-group-right">
-    <p-button label="Create" icon="pi pi-upload" class="mr-2" (click)="createEvent(createdEvent)"></p-button>
-    <p-button label="Clear" icon="pi pi-times" styleClass="p-button-warning mr-4" (click)="clear()"></p-button>
+    <p-button label="Submit" icon="pi pi-upload" class="mr-2" (click)="createEvent(createdEvent)"></p-button>
+    <p-button *ngIf="!is_edit" label="Clear" icon="pi pi-times" styleClass="p-button-warning mr-4" (click)="clear()"></p-button>
   </div>
 </p-toolbar>
 

@@ -1,0 +1,14 @@
+<div class="col-12">
+  <div class="card">
+    <!-- <h5>Advanced</h5> -->
+    <div class="p-fluid p-formgrid grid">
+      <div class="field col-12 md:col-12">
+        <label htmlFor="state">User's Role</label>
+        <p-dropdown [options]="dropdownItems" optionLabel="name" optionValue="code" [(ngModel)]="selectedRole"></p-dropdown>
+      </div>
+      <div class="field col-12">
+        <p-button label="Submit" (onClick)="onSubmit()" ></p-button>
+      </div>
+    </div>
+  </div>
+</div>
