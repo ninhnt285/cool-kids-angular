@@ -19,7 +19,7 @@ export class AuthService {
   readonly user$ = this._user.asObservable();
   
   public loggedIn = false
-  public user: User = {}
+  public user: User = null
 
   constructor(
     private apiService: ApiService,
@@ -76,6 +76,7 @@ export class AuthService {
   }
 
   logout() {
+    this.user = null
     this._user.next(null)
     this.apiService.updateToken("")
   }
