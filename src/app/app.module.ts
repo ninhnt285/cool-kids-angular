@@ -41,7 +41,7 @@ import { EditUserComponent } from './usermanagement/edit-user/edit-user.componen
 import { DropdownModule } from 'primeng/dropdown';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
-
+import { FAQsComponent } from './FAQs/FAQs.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -59,6 +59,7 @@ import { EventDetailComponent } from './events/event-detail/event-detail.compone
     EditUserComponent,
     EditProfileComponent,
     EventDetailComponent,
+    FAQsComponent
   ],
   imports: [
     AppLayoutModule,

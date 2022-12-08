@@ -34,6 +34,11 @@
     <a routerLink="/help">SiteHelp</a>
   </nav>
   <p-divider></p-divider>
+  <nav>
+    <a routerLink="/FAQ">FAQs</a>
+  </nav>
+  <p-divider></p-divider>
+
   <p-menu [model]="items"></p-menu>
 </p-sidebar>
 <div class="col-sm-3">
@@ -42,6 +47,5 @@
 <div id="box">
   <router-outlet></router-outlet>
 </div>
-
 
 <app-message-popup></app-message-popup>
