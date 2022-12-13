@@ -1,2 +1,4 @@
 C:\Users\marce\Documents\School Work\2022\ObjectDesign\Projects\angularproject1\obj\Debug\CoolKidsConnect.esproj.SuggestedBindingRedirects.cache
 C:\Users\marce\Documents\School Work\2022\ObjectDesign\Projects\angularproject1\obj\Debug\CoolKidsConnect.esproj.CoreCompileInputs.cache
+C:\Users\ally10\Source\Repos\coolkidsconnect\obj\Debug\CoolKidsConnect.esproj.SuggestedBindingRedirects.cache
+C:\Users\ally10\Source\Repos\coolkidsconnect\obj\Debug\CoolKidsConnect.esproj.CoreCompileInputs.cache

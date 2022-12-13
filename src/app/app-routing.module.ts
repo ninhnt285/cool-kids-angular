@@ -10,6 +10,7 @@ import { RegisterComponent } from "./auth/register/register.component";
 import { AppLayoutComponent } from "./layout/app.layout.component";
 import { LogoutComponent } from "./auth/logout/logout.component";
 import { EventDetailComponent } from "./events/event-detail/event-detail.component";
+import { FAQsComponent } from './FAQs/FAQs.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
       { path: 'events/:id', component: EventDetailComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'usermanagement', component: UsermanagementComponent },
-      { path: 'help', component: SiteHelpComponent }
+      { path: 'help', component: SiteHelpComponent },
+      { path: 'FAQ', component: FAQsComponent }
     ]
   }
 ];

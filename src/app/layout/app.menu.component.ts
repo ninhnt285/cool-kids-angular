@@ -50,7 +50,9 @@ export class AppMenuComponent implements OnInit {
                     { label: 'Events', icon: 'pi pi-fw pi-calendar', routerLink: ['/events'] },
                     
                     { label: 'User Management', icon: 'pi pi-fw pi-users', routerLink: ['/usermanagement'] },
-                    { label: 'Helps', icon: 'pi pi-fw pi-question-circle', routerLink: ['/help'] },
+                  { label: 'Helps', icon: 'pi pi-fw pi-question-circle', routerLink: ['/help'] },
+                  { label: 'FAQs', icon: 'pi pi-fw pi-question-circle', routerLink: ['/FAQ'] },
+
                 ]
             },
 
